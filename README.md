@@ -13,7 +13,6 @@
 ---
 
 ## 💼 Business Understanding
-<img src="https://github.com/mbenetti/CRISP-DM-Rossmann/blob/master/CRISP-DM.png" alt="CRISP Logo" width="400"/>
 
 
 The goal of this project is to bridge the gap between raw survey data and career-changing insights. We seek to understand how variables such as education, programming languages, and job search behavior influence salary and job outcomes. These findings are crucial for stakeholders such as:
@@ -66,22 +65,106 @@ Our analysis follows the **CRISP-DM** process:
 6. **Deployment** – Share findings through visuals and blog storytelling.
 
 ---
+## 📁 Repository Structure
+
+```
+DS-Blog-Post/
+│
+├── README.md                          # Project documentation (this file)
+├── blog_post.md                       # Detailed blog post with findings and insights
+├── stack_overflow_analysis.ipynb      # Jupyter notebook with complete analysis
+│
+├── data/
+│   └── survey_results_public.csv.zip  # Stack Overflow 2024 survey dataset
+│
+└── images/
+    ├── Analysis of Programming Languages.png
+    ├── Data Tools Overview.png
+    └── Education and Hiring.png
+```
+
+### File Descriptions
+
+- **README.md**: Overview of the project, methodology, tools used, and key findings
+- **blog_post.md**: Comprehensive blog-style narrative presenting the analysis findings in an accessible format
+- **stack_overflow_analysis.ipynb**: Complete Jupyter notebook containing:
+  - Data loading and exploration
+  - Data cleaning and preprocessing
+  - Exploratory Data Analysis (EDA) with visualizations
+  - Statistical testing (ANOVA, correlation analysis)
+  - Machine learning models for salary prediction
+  - Detailed comments and markdown explanations
+- **data/**: Contains the compressed survey dataset from Stack Overflow
+- **images/**: Visualization outputs saved from the analysis
+
+---
+
 ## 🔍 Key Findings
 
 Based on the analysis of the 2024 Stack Overflow Developer Survey data:
 
-1. **Education Level**: Developers with higher education (master’s or above) tend to have slightly higher salaries, but experience has a stronger impact overall.
+### 1. Education Impact
+- Developers with higher education (master's or above) have slightly higher salaries
+- **However**, experience has a significantly stronger impact than education level
+- ANOVA test confirms education significantly affects salary (p < 0.0001)
+- The gap between bachelor's and associate degrees is minimal (~3%)
 
-2. **Experience and Salary**: Professional coding experience shows a clear positive correlation with salary, especially beyond 5 years.
+### 2. Experience and Salary Correlation
+- Professional coding experience shows a clear positive correlation with salary
+- The relationship is especially strong beyond 5 years of experience
+- Years of experience matters more than formal education credentials
 
-3. **Most Used Languages**: JavaScript and Python remain the most widely used languages, especially in web and data-related fields.
+### 3. Programming Language Trends
+- **Most Used**: JavaScript (42,837 developers) and Python (35,256 developers)
+- **Highest Paying**: Niche languages like Zig, Erlang, Scala, Rust, and Go
+- Popular languages don't always correlate with highest salaries due to supply/demand
 
-4. **Remote Work Trends**: The majority of developers (over 60%) prefer hybrid or fully remote work, reflecting current global work trends.
+### 4. Remote Work Revolution
+- Over **60%** of developers prefer hybrid or fully remote work
+- Remote work status significantly affects salary (ANOVA: p = 0.0002)
+- Fully remote positions offer competitive compensation
 
-5. **Job Search Time**: Developers with higher education levels tend to spend less time searching for jobs each day.
-   
+### 5. Job Search Efficiency
+- Graduate degree holders find jobs ~15% faster than bachelor's degree holders
+- Minimal difference (3%) between bachelor's and associate degree holders
+- Education helps, but practical skills and networking can bridge the gap
+
+### 6. Predictive Modeling Insights
+- Best model (XGBoost) achieved R² = 0.046, RMSE = $56,699
+- **Key Takeaway**: Salary is highly contextual and depends on many factors beyond demographics
+- Company, location, negotiation skills, and specialized expertise play major roles
+
 ---
+
+## 📝 Blog Post
+
+For a detailed, narrative-driven exploration of these findings, see **[blog_post.md](blog_post.md)**.
+
+The blog post includes:
+- In-depth discussion of each research question
+- Practical recommendations for developers, hiring managers, and educators
+- Methodology explanation
+- Limitations and future work
+- Visual storytelling of the data insights
+
+---
+
 ## 🙏 Acknowledgements
 
-Huge thanks to [Stack Overflow](https://stackoverflow.com/) for conducting the survey and [Kaggle](https://www.kaggle.com/) for hosting the data.  
-This project was built as part of a data science learning journey to demonstrate both technical analysis and storytelling capabilities.
+This analysis was made possible by:
+
+- **[Stack Overflow](https://stackoverflow.com/)** for conducting the comprehensive annual developer survey
+- **[Kaggle](https://www.kaggle.com/)** for hosting and providing access to the dataset
+- The **65,000+ developers** worldwide who participated in the survey
+
+This project demonstrates the application of data science techniques to extract actionable career insights from real-world survey data.
+
+---
+
+## 📬 Contact & Feedback
+
+Questions, suggestions, or interested in collaborating? Feel free to open an issue or reach out!
+
+---
+
+*Project completed as part of a Data Science learning journey - 2024*
